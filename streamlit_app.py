@@ -12,11 +12,11 @@ import streamlit as st
 # load_dotenv()
 
 # Replace `os.getenv("TELEGRAM_TOKEN")` with your own token
-bot = telebot.TeleBot(os.getenv(st.secrets.telegram_token), parse_mode=None)
+bot = telebot.TeleBot(st.secrets.telegram_token, parse_mode=None)
 
 # Replace `os.getenv("GENAI_API_KEY")` with your own API key
 #genai.configure(api_key=os.getenv("GENAI_API_KEY"))
-genai.configure(api_key=os.getenv(st.secrets.genai_api_key))
+genai.configure(api_key=st.secrets.genai_api_key)
 
 # Set up the model
 generation_config = {
